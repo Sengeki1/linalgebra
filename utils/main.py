@@ -8,15 +8,14 @@ class Vector3:
         return iter((self.x, self.y, self.z))
          
          
-class Matrix:
+class Matrix3:
     def __init__(self, *args: Vector3) -> None:
         self.m = []
+        self.c = []
         for vector in args:
             (x, y, z) = vector
             self.m.append([x, y, z])
-        print(self.m)
     
     def add_const(self, vector: Vector3) -> None:
         (x, y, z) = vector
-        self.m.append([x, y, z])
-        print(self.m)
+        self.c.append([x, y, z])
